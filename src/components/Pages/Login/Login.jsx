@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom"
+
 /*
   This example requires some changes to your config:
   
@@ -13,6 +15,13 @@
   ```
 */
 export default function Register() {
+    const navigate = useNavigate();
+    const handleLogin = () => {
+      navigate("/login");
+    }
+    const handleRegister = () => {
+      navigate('/register');
+    }
     return (
       <>
         {/*
@@ -78,6 +87,7 @@ export default function Register() {
   
               <div>
                 <button
+                  onClick={handleLogin}
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
@@ -88,12 +98,12 @@ export default function Register() {
   
             <p className="mt-10 text-center text-sm text-gray-500">
               New to our site?{' '}
-              <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+              <a onClick={handleRegister} href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                 Register here
               </a>
             </p>
           </div>
-        </div>
+        </div>a
       </>
     )
   }

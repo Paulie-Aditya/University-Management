@@ -1,7 +1,9 @@
 import React from 'react'
 import {Box, Button, Grid, TextField} from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+    
   return (
     <div>
         <Grid container spacing={4} className='flex items-center justify-center' sx={{mt:"2rem"}}>
